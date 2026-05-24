@@ -19,7 +19,7 @@
 ## ---- 0.1 base directory -------------------------------------------
 # Your machine. Falls back to the current working directory if the
 # hard-coded path is not found (e.g. on a collaborator's computer).
-BASE_DIR <- "F:/EoT_Formal/EoT_Formal"          # forward slashes in R
+BASE_DIR <- "F:/EoT_Formal"          # forward slashes in R
 if (!dir.exists(BASE_DIR)) BASE_DIR <- getwd()
 
 ## ---- 0.2 CRAN packages --------------------------------------------
