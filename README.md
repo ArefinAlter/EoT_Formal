@@ -65,4 +65,9 @@ Written against documented package APIs; not executed during authoring. A short 
 Dependency note: `revengc` was archived from CRAN on 2026-03-18 and is used only by the archival reconstruction script, which installs it from the CRAN archive. For a fully self-contained repo (no archived dependency), inline a censored negative-binomial MLE in place of `cnbinom.pars()`; ask if you want that swap.
 
 ## License
-No license is included by default. Add one (e.g. MIT for code; CC-BY for text/figures) before making the repo public, or state "all rights reserved".
+This repository is dual-licensed:
+
+- **Source code** (`*.R` files, `run_all.R`, helpers) — [MIT License](LICENSE).
+- **Documentation, figures, tables, and publication-cleared data** (README files, `output/`, `data/main_cases_67.csv`, `data/other_cases_157.csv`, `data/DATA_README.md`) — [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-DOCS).
+
+If you reuse the code, attribution is appreciated but not required. If you reuse the text, figures, tables, or data, please cite the repository.
