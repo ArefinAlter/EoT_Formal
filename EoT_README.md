@@ -6,7 +6,7 @@ Analysis code for *The Formal-Informal Paradox of Indigenous Entrepreneurship in
 
 ## Repository layout
 ```
-EoT_Formal/                 <- repo root = F:\EoT_Formal\EoT_Formal
+EoT_Formal/                 <- repo root = F:\EoT_Formal
   00_setup.R                <- packages, paths, calibration anchors, cutoffs  (edit here)
   01_revengc_reconstruct.R  <- ARCHIVAL: how the 157-record set was made (not run)
   02_fsqca.R                <- calibrate -> necessity -> truth table -> minimize
@@ -24,7 +24,7 @@ EoT_Formal/                 <- repo root = F:\EoT_Formal\EoT_Formal
 ## Quick start
 ```r
 # in R / RStudio
-setwd("F:/EoT_Formal/EoT_Formal")
+setwd("F:/EoT_Formal")
 source("run_all.R")          # 00 -> 02 -> 04 (-> 03 if 'brs' installed)
 ```
 Install packages first (see `00_setup.R`). BRS is optional and is skipped automatically if not installed.

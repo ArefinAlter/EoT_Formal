@@ -58,17 +58,22 @@ if (HAVE_BRS) suppressMessages(library(brs)) else
 PATHS <- list(
   data_dir = file.path(BASE_DIR, "data"),
   out_dir  = file.path(BASE_DIR, "output"),
-  ip_csv   = "mock_cases_67.csv",     # <- replace with real 67-case file
-  surv_csv = "mock_cases_157.csv"     # <- replace with real reconstructed file
+  ip_csv   = "main_cases_67.csv",      # real 67-case study data
+  surv_csv = "other_cases_157.csv"     # reconstructed comparison set
 )
 dir.create(PATHS$out_dir, showWarnings = FALSE, recursive = TRUE)
 rdpath <- function(f) file.path(PATHS$data_dir, f)
 opath  <- function(f) file.path(PATHS$out_dir, f)
 
-# Mock-data flag: when TRUE, APA table/figure titles are watermarked so
-# synthetic numbers can never be mistaken for results. Auto-detected from
-# the filename; set manually to FALSE once you use real data.
+# Mock-data flag: TRUE only when filenames start with "mock" (auto-off for
+# real data). Watermarks APA titles when TRUE.
 IS_MOCK <- grepl("^mock", PATHS$ip_csv)
+
+# Calibration source:
+#   TRUE  -> use the already-calibrated *_fz columns as the fuzzy sets
+#            (honors your bespoke GROWTH definition and equal-weight scoring)
+#   FALSE -> recalibrate the *_score columns in-code with ANCHORS below
+USE_PROVIDED_FZ <- TRUE
 
 # APA formatting options
 APA <- list(

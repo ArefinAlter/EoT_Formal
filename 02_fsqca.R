@@ -32,28 +32,37 @@ extract_pof <- function(sol) {
 ip   <- read_csv(rdpath(PATHS$ip_csv),   show_col_types = FALSE)
 surv <- read_csv(rdpath(PATHS$surv_csv), show_col_types = FALSE)
 
-score_cols <- c(paste0(CONDITIONS, "_score"), paste0(OUTCOME, "_score"))
-stopifnot(all(score_cols %in% names(ip)))
+src_suffix <- if (USE_PROVIDED_FZ) "_fz" else "_score"
+need <- paste0(c(CONDITIONS, OUTCOME), src_suffix)
+stopifnot(all(need %in% names(ip)), all(need %in% names(surv)))
 
-ip_scores   <- ip   |> select(case_id, source, all_of(score_cols))
-surv_scores <- surv |> select(case_id, source, all_of(score_cols))
-pooled      <- bind_rows(ip_scores, surv_scores)
+ip_in   <- ip   |> select(case_id, source, all_of(need))
+surv_in <- surv |> select(case_id, source, all_of(need))
+pooled  <- bind_rows(ip_in, surv_in)
 
-## ---- 2.2 calibrate raw 0-1 scores into fuzzy sets ------------------
-calibrate_df <- function(df) {
+## ---- 2.2 build fuzzy sets -----------------------------------------
+# Default (USE_PROVIDED_FZ = TRUE): use the already-calibrated *_fz columns,
+# honoring your bespoke GROWTH definition and equal-weight scoring. If FALSE,
+# recalibrate the *_score columns with ANCHORS. Either way, any exact-0.5
+# (ambiguous crossover) membership is nudged to 0.501 so the truth table is
+# well defined (this affects ENVO here: 4 cases in the 67 set, more in 157).
+build_sets <- function(df) {
   out <- df["case_id"]
   for (v in c(CONDITIONS, OUTCOME)) {
-    thr <- ANCHORS[[v]]                       # c(i=, c=, e=)
-    m <- QCA::calibrate(
-      df[[paste0(v, "_score")]], type = "fuzzy",
-      thresholds = c(e = thr["e"], c = thr["c"], i = thr["i"]))
-    m[m == 0.5] <- 0.501                       # avoid exact-crossover memberships
+    if (USE_PROVIDED_FZ) {
+      m <- df[[paste0(v, "_fz")]]
+    } else {
+      thr <- ANCHORS[[v]]
+      m <- QCA::calibrate(df[[paste0(v, "_score")]], type = "fuzzy",
+                          thresholds = c(e = thr["e"], c = thr["c"], i = thr["i"]))
+    }
+    m[m == 0.5] <- 0.501
     out[[v]] <- m
   }
   as.data.frame(out)
 }
-cal_ip     <- calibrate_df(ip_scores)
-cal_pooled <- calibrate_df(pooled)
+cal_ip     <- build_sets(ip_in)
+cal_pooled <- build_sets(pooled)
 write_csv(cal_ip,     opath("calibrated_ip67.csv"))
 write_csv(cal_pooled, opath("calibrated_pooled224.csv"))
 
@@ -71,6 +80,7 @@ run_fsqca <- function(cal, tag) {
                           cov.cut  = QCA_SET$nec.cov)
   save_txt(nec, paste0("necessity_", tag, ".txt"))
 
+  # full necessity parameters of fit for every condition (and ~negation)
   # necessity parameters of fit for each condition (presence only)
   nec_tab <- do.call(rbind, lapply(CONDITIONS, function(cd) {
     p <- QCA::pof(dat[[cd]], dat[[OUTCOME]], relation = "necessity")$incl.cov

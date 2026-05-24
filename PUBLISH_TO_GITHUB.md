@@ -1,6 +1,6 @@
 # Publishing EoT_Formal to GitHub
 
-Step-by-step for Windows. Your repo root is `F:\EoT_Formal\EoT_Formal`.
+Step-by-step for Windows. Your repo root is `F:\EoT_Formal`.
 
 > Before you push: confirm `data/` contains only the **mock** CSVs. Do not publish real, confidential interview data. `.gitignore` already blocks `data/real_*.csv` and `data/*_confidential*.csv`, but double-check.
 
@@ -16,11 +16,11 @@ git config --global user.email "you@example.com"
 ## 1. Open a terminal in the repo
 Git Bash:
 ```bash
-cd /f/EoT_Formal/EoT_Formal
+cd /f/EoT_Formal
 ```
 PowerShell:
 ```powershell
-cd F:\EoT_Formal\EoT_Formal
+cd F:\EoT_Formal
 ```
 
 ## 2. Initialize and make the first commit
@@ -62,7 +62,7 @@ usethis::use_github(private = FALSE)
 ## 4. Generate outputs before committing (optional)
 If you want the figures/tables in the repo, run the pipeline first, then commit:
 ```r
-setwd("F:/EoT_Formal/EoT_Formal"); source("run_all.R")
+setwd("F:/EoT_Formal"); source("run_all.R")
 ```
 ```bash
 git add output

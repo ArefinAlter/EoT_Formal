@@ -1,7 +1,7 @@
 # =====================================================================
 # run_all.R  --  generate everything
 # Usage (R console or RStudio):
-#   setwd("F:/EoT_Formal/EoT_Formal")
+#   setwd("F:/EoT_Formal")
 #   source("run_all.R")
 #
 # Note: 01_revengc_reconstruct.R is archival and intentionally NOT run
