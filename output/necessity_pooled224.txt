@@ -1,0 +1,30 @@
+
+                                   inclN   RoN   covN  
+------------------------------------------------------ 
+ 1  BEASE + ~EPSY                  0.941  0.305  0.584 
+ 2  FIN + ~EPSY                    0.929  0.316  0.582 
+ 3  BPRAC + ~EPSY                  0.947  0.272  0.576 
+ 4  ~EPSY + ENVO                   0.945  0.265  0.573 
+ 5  BEASE + ~FIN + ~BPRAC          0.922  0.337  0.586 
+ 6  BEASE + ~FIN + BPRAC           0.900  0.421  0.607 
+ 7  ~BEASE + ~FIN + ~EPSY          0.901  0.280  0.555 
+ 8  BEASE + ~FIN + ~ENVO           0.922  0.335  0.585 
+ 9  BEASE + ~FIN + ENVO            0.909  0.404  0.605 
+10  ~BEASE + ~BPRAC + ~EPSY        0.900  0.303  0.562 
+11  BEASE + ~BPRAC + ~ENVO         0.911  0.398  0.603 
+12  BEASE + ~BPRAC + ENVO          0.922  0.393  0.607 
+13  BEASE + BPRAC + ~ENVO          0.916  0.455  0.629 
+14  ~BEASE + ~EPSY + ~ENVO         0.901  0.303  0.563 
+15  ~FIN + ~BPRAC + ~EPSY          0.906  0.276  0.556 
+16  ~FIN + ~EPSY + ~ENVO           0.905  0.276  0.556 
+17  BEASE + FIN + ~BPRAC + EPSY    0.901  0.470  0.629 
+18  ~BEASE + ~FIN + ~BPRAC + ENVO  0.904  0.321  0.571 
+19  ~BEASE + FIN + ~BPRAC + ~ENVO  0.913  0.344  0.584 
+20  ~BEASE + FIN + ~BPRAC + ENVO   0.918  0.343  0.586 
+21  ~BEASE + FIN + BPRAC + ~ENVO   0.916  0.371  0.596 
+22  BEASE + FIN + EPSY + ~ENVO     0.902  0.510  0.647 
+23  ~FIN + ~BPRAC + EPSY + ENVO    0.902  0.330  0.573 
+24  FIN + ~BPRAC + EPSY + ~ENVO    0.906  0.402  0.603 
+25  FIN + ~BPRAC + EPSY + ENVO     0.902  0.408  0.603 
+------------------------------------------------------ 
+

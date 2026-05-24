@@ -1,0 +1,27 @@
+# --- R session / IDE cruft ---
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj.bak
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Python / BRS conda env (do not commit) ---
+**/miniforge3/
+**/.venv/
+__pycache__/
+
+# --- large binary outputs (regenerate from code) ---
+output/*.rds
+# To SHARE generated figures/tables on GitHub, they are kept by default.
+# To exclude all generated output instead, uncomment the next line:
+# output/
+
+# --- IMPORTANT: never commit confidential real data ---
+# The mock_* files are safe to publish. When you switch to REAL
+# case-level interview data, keep it OUT of the public repo:
+data/real_*.csv
+data/*_confidential*.csv
