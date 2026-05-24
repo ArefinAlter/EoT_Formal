@@ -14,12 +14,14 @@ Thumbs.db
 **/.venv/
 __pycache__/
 
-# --- generated outputs (regenerate from code) ---
-output/*
-!output/.gitkeep
-
-# --- IMPORTANT: never commit confidential real data ---
-# The mock_* files are safe to publish. When you switch to REAL
-# case-level interview data, keep it OUT of the public repo:
+# --- data files ---
+# The data/ folder currently contains BOTH mock and real data:
+#   - mock_cases_67.csv, mock_cases_157.csv     (synthetic, safe)
+#   - main_cases_67.csv, other_cases_157.csv    (real, cleared for publication)
+# These four files are intentionally tracked. The patterns below are
+# safeguards against accidentally committing NEW confidential files
+# under conventional names — review any new CSV before adding it.
 data/real_*.csv
 data/*_confidential*.csv
+data/*_raw*.csv
+data/*_pii*.csv

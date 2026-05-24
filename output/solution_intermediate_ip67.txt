@@ -1,0 +1,40 @@
+
+From C1P1, C1P2, C1P3: 
+
+M1:    BEASE*FIN*BPRAC + BEASE*FIN*EPSY + BEASE*FIN*ENVO -> GROWTH 
+
+                    inclS   PRI   covS   covU  
+---------------------------------------------- 
+1  BEASE*FIN*BPRAC  0.864  0.826  0.736  0.180 
+2   BEASE*FIN*EPSY  0.861  0.793  0.481  0.077 
+3   BEASE*FIN*ENVO  0.883  0.840  0.591  0.036 
+---------------------------------------------- 
+                M1  0.880  0.852  0.852 
+
+                    cases 
+------------------------- 
+1  BEASE*FIN*BPRAC  IP_015,IP_017,IP_018,IP_060; IP_004,IP_006,IP_020,IP_029,IP_047,IP_051,IP_053; IP_001,IP_010,IP_030,IP_042
+2   BEASE*FIN*EPSY  IP_025,IP_039; IP_001,IP_010,IP_030,IP_042
+3   BEASE*FIN*ENVO  IP_036; IP_004,IP_006,IP_020,IP_029,IP_047,IP_051,IP_053; IP_001,IP_010,IP_030,IP_042
+------------------------- 
+
+
+From C1P4: 
+
+M1:    BEASE*FIN*ENVO + BEASE*FIN*~BPRAC*EPSY + BEASE*FIN*BPRAC*~EPSY -> GROWTH 
+
+                          inclS   PRI   covS   covU  
+---------------------------------------------------- 
+1         BEASE*FIN*ENVO  0.883  0.840  0.591  0.161 
+2  BEASE*FIN*~BPRAC*EPSY  0.900  0.802  0.308  0.077 
+3  BEASE*FIN*BPRAC*~EPSY  0.886  0.844  0.574  0.148 
+---------------------------------------------------- 
+                      M1  0.876  0.846  0.816 
+
+                          cases 
+------------------------------- 
+1         BEASE*FIN*ENVO  IP_036; IP_004,IP_006,IP_020,IP_029,IP_047,IP_051,IP_053; IP_001,IP_010,IP_030,IP_042
+2  BEASE*FIN*~BPRAC*EPSY  IP_025,IP_039
+3  BEASE*FIN*BPRAC*~EPSY  IP_015,IP_017,IP_018,IP_060; IP_004,IP_006,IP_020,IP_029,IP_047,IP_051,IP_053
+------------------------------- 
+

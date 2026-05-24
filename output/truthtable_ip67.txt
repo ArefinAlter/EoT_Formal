@@ -1,0 +1,20 @@
+
+  OUT: output value
+    n: number of cases in configuration
+ incl: sufficiency inclusion score
+  PRI: proportional reduction in inconsistency
+
+     BEASE FIN BPRAC EPSY ENVO   OUT    n   incl  PRI   cases                                                                
+30     1    1    1    0    1      1     7   0.922 0.874 IP_004,IP_006,IP_020,IP_029,IP_047,IP_051,IP_053                     
+29     1    1    1    0    0      1     4   0.848 0.764 IP_015,IP_017,IP_018,IP_060                                          
+32     1    1    1    1    1      1     4   0.838 0.736 IP_001,IP_010,IP_030,IP_042                                          
+27     1    1    0    1    0      1     2   0.899 0.798 IP_025,IP_039                                                        
+26     1    1    0    0    1      1     1   0.882 0.724 IP_036                                                               
+10     0    1    0    0    1      0     10  0.386 0.118 IP_008,IP_019,IP_021,IP_032,IP_034,IP_038,IP_043,IP_062,IP_065,IP_066
+ 3     0    0    0    1    0      0     9   0.264 0.068 IP_007,IP_028,IP_033,IP_040,IP_054,IP_056,IP_063,IP_064,IP_067       
+ 7     0    0    1    1    0      0     9   0.192 0.047 IP_009,IP_011,IP_013,IP_031,IP_037,IP_044,IP_045,IP_057,IP_059       
+ 8     0    0    1    1    1      0     9   0.202 0.050 IP_012,IP_022,IP_026,IP_027,IP_046,IP_050,IP_052,IP_058,IP_061       
+21     1    0    1    0    0      0     7   0.479 0.163 IP_003,IP_014,IP_023,IP_024,IP_048,IP_049,IP_055                     
+25     1    1    0    0    0      0     4   0.736 0.540 IP_005,IP_016,IP_035,IP_041                                          
+15     0    1    1    1    0      0     1   0.615 0.248 IP_002                                                               
+

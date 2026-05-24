@@ -1,0 +1,21 @@
+Figure 1
+Gender composition of the case-study sample. 
+
+Figure 2
+Ethnic-group composition of the case-study sample. 
+
+Figure 3
+Distribution of condition scores across cases. 
+
+Figure 4
+Pairwise correlations among condition scores (case-study instrument).
+Note. Cells show Pearson r. 
+
+Figure 5
+Sufficiency XY plot for the BEASE * FIN path.
+Note. Consistency = 0.83. Points on or below the diagonal are consistent with sufficiency. 
+
+Figure 6
+Necessity XY plot for FIN.
+Note. Consistency = 0.95. Points on or above the diagonal are consistent with necessity. 
+
