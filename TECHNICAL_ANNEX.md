@@ -13,7 +13,7 @@ This annex collects the formal material supporting the main text: the mathematic
 To construct a measure of Indigenous business performance, we aggregate the 66 variables into five factors, each a superset of related dimensions. The index follows established procedures for composite scoring: normalisation, weighting and aggregation. First, the raw variables $X_i$, measured on different scales, are normalised to a common 0–1 scale:
 
 $$
-X_i^{\,\mathrm{norm}} = \dfrac{X_i - X_{\min}}{X_{\max} - X_{\min}} \tag{2}
+X_i^{\mathrm{norm}} = \frac{X_i - X_{\min}}{X_{\max} - X_{\min}} \quad (2)
 $$
 
 where $X_{\min}$ and $X_{\max}$ are the minimum and maximum observed values of $X_i$. This ensures that all variables contribute on the same scale to the aggregation.
@@ -21,25 +21,25 @@ where $X_{\min}$ and $X_{\max}$ are the minimum and maximum observed values of $
 The normalised variables are aggregated into factors. Let $F_j$ denote the $j$-th factor, computed as a weighted sum of the normalised variables in that category:
 
 $$
-F_j = \sum_{i=1}^{n_j} w_{ij}\, X_i^{\,\mathrm{norm}} \tag{3}
+F_j = \sum_{i=1}^{n_j} w_{ij} \, X_i^{\mathrm{norm}} \quad (3)
 $$
 
 where $n_j$ is the number of variables in factor $j$, and $w_{ij}$ is the weight on the $i$-th variable. Weights are normalised so that
 
 $$
-\sum_{i=1}^{n_j} w_{ij} = 1 \tag{4}
+\sum_{i=1}^{n_j} w_{ij} = 1 \quad (4)
 $$
 
 The composite index $CI$ aggregates the factors into a single score:
 
 $$
-CI = \sum_{j=1}^{m} \alpha_j F_j \tag{5}
+CI = \sum_{j=1}^{m} \alpha_j F_j \quad (5)
 $$
 
 with $m = 5$, corresponding to Business Practices ($F_1$), Formal Financial Access ($F_2$), Local Entrepreneurial Environment / Market Availability ($F_3$), Entrepreneurial Psychology ($F_4$) and Ease of Doing Business ($F_5$). The factor weights $\alpha_j$ satisfy
 
 $$
-\sum_{j=1}^{m} \alpha_j = 1 \tag{6}
+\sum_{j=1}^{m} \alpha_j = 1 \quad (6)
 $$
 
 The weights $w_{ij}$ and $\alpha_j$ follow an equal-weight specification: within each factor every variable receives equal weight ($w_{ij} = 1/n_j$), so a factor score is the mean of its normalised items. The factors then enter the fsQCA as separately calibrated conditions rather than through a single composite, so no cross-factor weighting is imposed on the analysis; the composite index above is reported for descriptive completeness. The set-membership scores used in the analysis are available in the project repository.
@@ -51,31 +51,31 @@ The weights $w_{ij}$ and $\alpha_j$ follow an equal-weight specification: within
 Consistency measures the degree to which a statement about a set relation holds in the data. For claims of sufficiency, a condition $X$ is a subset of the outcome $Y$; consistency is
 
 $$
-\mathrm{Cons}_{\mathrm{suf}}(X_i \leq Y_i) = \dfrac{\sum_{i=1}^{N} \min(X_i, Y_i)}{\sum_{i=1}^{N} X_i} \tag{9}
+\mathrm{Cons}_{\mathrm{suf}}(X_i \leq Y_i) = \frac{\sum_{i=1}^{N} \min(X_i, Y_i)}{\sum_{i=1}^{N} X_i} \quad (9)
 $$
 
 Following Ragin (2006), when all $X_i$ values are less than or equal to their corresponding $Y_i$ values the consistency score is 1.00; near-misses lower it slightly, and many large inconsistencies push it below 0.5. For claims of necessity (where $X$ is a superset of $Y$), consistency is
 
 $$
-\mathrm{Cons}_{\mathrm{nec}}(X_i \geq Y_i) = \dfrac{\sum_{i=1}^{N} \min(X_i, Y_i)}{\sum_{i=1}^{N} Y_i} \tag{10}
+\mathrm{Cons}_{\mathrm{nec}}(X_i \geq Y_i) = \frac{\sum_{i=1}^{N} \min(X_i, Y_i)}{\sum_{i=1}^{N} Y_i} \quad (10)
 $$
 
 To guard against simultaneous subset relations, we also report Proportional Reduction in Inconsistency (PRI):
 
 $$
-\mathrm{PRI} = \dfrac{\sum_i \min(X_i, Y_i) - \sum_i \min(X_i, Y_i, 1-Y_i)}{\sum_i X_i - \sum_i \min(X_i, Y_i, 1-Y_i)} \tag{11}
+\mathrm{PRI} = \frac{\sum_i \min(X_i, Y_i) - \sum_i \min(X_i, Y_i, 1-Y_i)}{\sum_i X_i - \sum_i \min(X_i, Y_i, 1-Y_i)} \quad (11)
 $$
 
 Coverage indicates how much of the outcome a solution accounts for. Raw coverage is
 
 $$
-\mathrm{Cov}_{\mathrm{raw}} = \dfrac{\sum_{i=1}^{N} \min(X_i, Y_i)}{\sum_{i=1}^{N} Y_i} \tag{12}
+\mathrm{Cov}_{\mathrm{raw}} = \frac{\sum_{i=1}^{N} \min(X_i, Y_i)}{\sum_{i=1}^{N} Y_i} \quad (12)
 $$
 
 and unique coverage isolates the share of the outcome explained only by a given path (where $X_i^{(k)}$ collects the other paths):
 
 $$
-\mathrm{Cov}_{\mathrm{unique}} = \dfrac{\sum_i \min(X_i, Y_i) - \sum_i \min\!\left(X_i^{(k)}, Y_i\right)}{\sum_i Y_i} \tag{13}
+\mathrm{Cov}_{\mathrm{unique}} = \frac{\sum_i \min(X_i, Y_i) - \sum_i \min\left(X_i^{(k)}, Y_i\right)}{\sum_i Y_i} \quad (13)
 $$
 
 We distinguish solution coverage, raw coverage and unique coverage (Ragin 2006; Schneider and Wagemann 2010). By construction, unique coverage cannot exceed raw coverage for the same path.
@@ -92,13 +92,13 @@ When several latent variables are present, composite scoring reduces them to a r
 Two further measures referenced in the main text support the data construction (their full statements appear in the body as equations 1 and 7; they are reproduced here for completeness). Inter-rater agreement in the qualitative coding of case-study items was assessed with Fleiss' $\kappa$ (eq. 1):
 
 $$
-\kappa = \dfrac{\bar{P} - \bar{P}_e}{1 - \bar{P}_e}
+\kappa = \frac{\bar{P} - \bar{P}_e}{1 - \bar{P}_e} \quad (1)
 $$
 
 where $\bar{P}$ is the mean observed agreement across items and $\bar{P}_e$ the mean agreement expected by chance. The reconstruction of the aggregate Future of Business Survey records used a censored negative-binomial model, fitted by maximising the grouped log-likelihood (eq. 7)
 
 $$
-\ell(\mu, \phi) = \sum_{k} c_k \ln\!\left[ \sum_{x=a_k}^{b_k} \frac{\Gamma(x+\phi)}{x!\,\Gamma(\phi)} \left(\frac{\phi}{\phi+\mu}\right)^{\!\phi} \left(\frac{\mu}{\phi+\mu}\right)^{\!x} \right]
+\ell(\mu, \phi) = \sum_{k} c_k \ln \left[ \sum_{x=a_k}^{b_k} \frac{\Gamma(x+\phi)}{x! \, \Gamma(\phi)} \left(\frac{\phi}{\phi+\mu}\right)^{\phi} \left(\frac{\mu}{\phi+\mu}\right)^{x} \right] \quad (7)
 $$
 
 where each observed count band $[a_k, b_k]$ contributes $c_k$ cases, and $\mu$ and $\phi$ are the mean and dispersion parameters. (These reconstructed records inform the pooled robustness check in Appendix C only.)
