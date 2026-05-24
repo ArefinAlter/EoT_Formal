@@ -2,6 +2,8 @@
 
 Analysis code for *The Formal-Informal Paradox of Indigenous Entrepreneurship in Bangladesh*. The pipeline calibrates condition scores into fuzzy sets, runs fuzzy-set Qualitative Comparative Analysis (fsQCA), runs a Bayesian Rule Set (BRS) cross-check, and produces the figures.
 
+> **Technical Annex.** [`TECHNICAL_ANNEX.md`](TECHNICAL_ANNEX.md) supplements the manuscript with the formal material: the composite-index formulation, consistency/coverage measures, supplementary methodological notes, and Appendices A (calibration anchors), B (truth table), C (pooled 224-record robustness analysis) and D (variable-to-factor accounting). Equation and appendix labels match the main text.
+
 > **Data.** `data/` contains **both real and mock** CSVs:
 > - `main_cases_67.csv` (real, 67 IP-led interview cases — cleared for publication) and `other_cases_157.csv` (real, 157 FoBS records — cleared for publication) are the analysis inputs.
 > - `mock_cases_67.csv` and `mock_cases_157.csv` are synthetic harnesses for collaborator onboarding; output produced from them is auto-watermarked *(illustrative; mock data)*.
@@ -11,6 +13,7 @@ Analysis code for *The Formal-Informal Paradox of Indigenous Entrepreneurship in
 ## Repository layout
 ```
 EoT_Formal/                 <- repo root = F:\EoT_Formal
+  TECHNICAL_ANNEX.md        <- formal annex to the manuscript (equations, Appendices A-D)
   00_setup.R                <- packages, paths, calibration anchors, cutoffs  (edit here)
   01_revengc_reconstruct.R  <- ARCHIVAL: how the 157-record set was made (not run)
   02_fsqca.R                <- calibrate -> necessity -> truth table -> minimize
@@ -65,4 +68,9 @@ Written against documented package APIs; not executed during authoring. A short 
 Dependency note: `revengc` was archived from CRAN on 2026-03-18 and is used only by the archival reconstruction script, which installs it from the CRAN archive. For a fully self-contained repo (no archived dependency), inline a censored negative-binomial MLE in place of `cnbinom.pars()`; ask if you want that swap.
 
 ## License
-No license is included by default. Add one (e.g. MIT for code; CC-BY for text/figures) before making the repo public, or state "all rights reserved".
+This repository is dual-licensed:
+
+- **Source code** (`*.R` files, `run_all.R`, helpers) — [MIT License](LICENSE).
+- **Documentation, figures, tables, and publication-cleared data** (README files, [`TECHNICAL_ANNEX.md`](TECHNICAL_ANNEX.md), `output/`, `data/main_cases_67.csv`, `data/other_cases_157.csv`, `data/DATA_README.md`) — [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-DOCS).
+
+If you reuse the code, attribution is appreciated but not required. If you reuse the text, figures, tables, data, or the technical annex, please cite the repository and the manuscript.

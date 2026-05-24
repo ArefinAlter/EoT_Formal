@@ -48,7 +48,7 @@ PATHS <- list(
 | ENVO   | 0.78 | 0.48 | 0.20 |
 | GROWTH | 0.80 | 0.45 | 0.15 |
 
-Edit `ANCHORS` in `00_setup.R` to change them. Calibration anchors must be fixed *before* minimization, not tuned to a result.
+Edit `ANCHORS` in `00_setup.R` to change them. Calibration anchors must be fixed *before* minimization, not tuned to a result. The substantive justification for each anchor used in the published analysis (and the membership-to-raw mapping $\text{raw} = 4m + 1$) is given in **Appendix A** of [`../TECHNICAL_ANNEX.md`](../TECHNICAL_ANNEX.md); the truth table and the pooled 224-record robustness analysis are in Appendices B and C.
 
 ## About the mock files
 

@@ -3,10 +3,10 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 Copyright (c) 2026 ArefinAlter
 
 This license applies to the non-code content of this repository, including
-(but not limited to) README files, documentation, figures, tables, and data
-files in the `data/` and `output/` directories that have been cleared for
-publication. Source code in this repository is licensed separately under the
-MIT License (see the LICENSE file).
+(but not limited to) README files, the technical annex (TECHNICAL_ANNEX.md),
+documentation, figures, tables, and data files in the `data/` and `output/`
+directories that have been cleared for publication. Source code in this
+repository is licensed separately under the MIT License (see the LICENSE file).
 
 ================================================================================
 
@@ -52,6 +52,8 @@ A human-readable summary is available at:
 
 Suggested citation / attribution:
 
-  ArefinAlter (2026). EoT Formal Analysis Pipeline. Available at:
-  https://github.com/ArefinAlter/EoT_Formal — Licensed under CC BY 4.0
-  (documentation, figures, data) and MIT (source code).
+  ArefinAlter (2026). EoT Formal Analysis Pipeline and Technical Annex to
+  "The Formal-Informal Paradox of Indigenous Entrepreneurship in Bangladesh."
+  Available at: https://github.com/ArefinAlter/EoT_Formal — Licensed under
+  CC BY 4.0 (documentation, technical annex, figures, data) and MIT (source
+  code).
